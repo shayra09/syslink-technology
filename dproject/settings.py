@@ -145,4 +145,24 @@ EMAIL_USE_SSL = False
 
 EMAIL_HOST_USER = 'syslink26@gmail.com'      # Aapka gmail address
 EMAIL_HOST_PASSWORD = 'abcd efgh ijkl mnop'          # Aapka 16-digit App Password
+
+
+
+STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+    BASE_DIR / 'static',
+]
+
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
+# WhiteNoise Storage
+STORAGES = {
+    "default": {
+        "BACKEND": "django.core.files.storage.FileSystemStorage",
+    },
+    "staticfiles": {
+        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+    },
+}
   
